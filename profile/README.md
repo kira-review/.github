@@ -5,57 +5,58 @@
   </picture>
 </p>
 
-<p align="center"><em>Inteligência que entende. Contexto que transforma.</em></p>
+<p align="center"><em>Intelligence that understands. Context that transforms.</em></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/em_produção-B35A6A?style=flat-square" alt="Em produção">
-  <img src="https://img.shields.io/badge/código-privado-1A1A1F?style=flat-square" alt="Código privado">
-  <img src="https://img.shields.io/badge/criação_·_recrutamento-F7C2CD?style=flat-square" alt="Criação e recrutamento">
+  <img src="https://img.shields.io/badge/in_production-B35A6A?style=flat-square" alt="In production">
+  <img src="https://img.shields.io/badge/code-private-1A1A1F?style=flat-square" alt="Private code">
+  <img src="https://img.shields.io/badge/creative_·_recruitment-F7C2CD?style=flat-square" alt="Creative and recruitment">
 </p>
 
 ---
 
-A Kira é uma colega de IA para times de criação e de recrutamento. Ela analisa artes e
-candidatos, lembra como **os seus** revisores julgam o trabalho e fica mais alinhada com eles a
-cada revisão.
+Kira is an AI coworker for creative and recruitment teams. It analyzes artwork and candidates,
+remembers how **your** reviewers judge work, and gets more aligned with them with every review.
 
-Não é um ATS genérico, nem uma ferramenta de "dê uma nota para o meu design". O produto é o
-**ciclo de memória**:
+It is not a generic ATS, and not a one-shot "score my design" tool. The product is the
+**memory loop**:
 
 ```
-  a Kira propõe uma avaliação  →  uma pessoa corrige
-            ↑                               ↓
-  a próxima avaliação parte daí  ←  a correção vira conhecimento do time
+  Kira proposes an evaluation   →   a human corrects it
+            ↑                                ↓
+  the next evaluation starts there  ←  the correction becomes team knowledge
 ```
 
-## O que ela faz
+## What it does
 
-**Criação** — avalia artes, campanhas e copy por critério (composição, tipografia, cor,
-consistência de marca), mede o que dá para medir na imagem e mostra quais memórias usou em cada
-nota. A pessoa corrige critério a critério, e a correção fica.
+**Creative** — evaluates artwork, campaigns and copy per criterion (composition, typography,
+colour, brand consistency), measures what can be measured in the image, and shows which
+memories each score drew on. Reviewers correct it criterion by criterion, and the correction
+sticks.
 
-**Recrutamento** — lê CVs e portfólios, pontua candidatos para uma vaga e explica o ranking.
-Características pessoais protegidas são removidas dos documentos antes de qualquer modelo
-vê-los, e toda afirmação sobre um candidato vem com o trecho do documento que a sustenta.
+**Recruitment** — reads CVs and portfolios, scores candidates against a job and explains the
+ranking. Protected personal characteristics are stripped from documents before any model sees
+them, and every claim about a candidate carries the quote from the source that backs it.
 
-**Conhecimento** — cada marca atendida tem a própria memória. Regras que o time já tem entram
-coladas ou extraídas de um brand book, e o material de um cliente nunca aparece como referência
-para outro.
+**Knowledge** — every brand the team serves has its own memory. Rules the team already has go
+in pasted or extracted from a brand book, and one client's material is never offered as a
+reference for another.
 
-**Conversa** — a Kira inteira pode ser usada de dentro do Claude, por um servidor MCP.
+**Conversation** — the whole of Kira can be driven from Claude, through an MCP server.
 
-## Regras da casa
+## Ground rules
 
-1. **Nada roda sozinho.** Toda análise começa com alguém pedindo, a menos que o time ligue a
-   automação.
-2. **A IA propõe, as pessoas decidem.** Nenhum registro escrito pela IA vale sozinho.
-3. **A Kira admite quando erra.** Ela mede o próprio viés contra o de cada revisor e mostra.
+1. **Nothing runs by itself.** Every analysis starts with someone asking for it, unless the
+   team turns automation on.
+2. **AI proposes, humans decide.** No AI-written record is authoritative on its own.
+3. **Kira admits when it is wrong.** It measures its own bias against each reviewer's and
+   shows it.
 
 <p align="center">
-  <img src="assets/signature.png" width="720" alt="Monte, sol e cerejeira — assinatura visual da Kira">
+  <img src="assets/signature.png" width="720" alt="Mountain, sun and cherry blossom — Kira's signature visual">
 </p>
 
-## Como é feita
+## How it is built
 
 <p>
   <img src="https://img.shields.io/badge/React-1A1A1F?style=flat-square&logo=react&logoColor=F7C2CD" alt="React">
@@ -69,22 +70,22 @@ para outro.
   <img src="https://img.shields.io/badge/MCP-1A1A1F?style=flat-square&logo=modelcontextprotocol&logoColor=F7C2CD" alt="MCP">
 </p>
 
-- **Memória com RAG** sobre embeddings no pgvector, ranqueada e com origem rastreável.
-- **Multi-tenant** com row-level security no PostgreSQL: cada agência isolada pelo banco.
-- **Filas** com pg-boss para as análises, e armazenamento compatível com S3.
-- **246 testes de integração** contra um Postgres real, incluindo um cliente MCP de verdade.
-- **Acessibilidade medida:** todo par de texto da interface passa WCAG AA, calculado e não estimado.
+- **Memory with RAG** over pgvector embeddings, ranked and with traceable provenance.
+- **Multi-tenant** with PostgreSQL row-level security: each agency isolated by the database.
+- **Queues** with pg-boss for analyses, and S3-compatible storage.
+- **246 integration tests** against a real Postgres, including a real MCP client.
+- **Measured accessibility:** every text pair in the interface passes WCAG AA, computed rather than eyeballed.
 
 ## Design
 
-Linguagem *Shoji + Workbench*: superfícies separadas por linha fina, sem sombra, raio de 2px;
-o trabalho em linhas com uma faixa de severidade que deixa achar o que precisa de atenção antes
-de ler. Jost nos títulos, Inter na interface.
+A *Shoji + Workbench* language: surfaces divided by a hairline, no shadows, 2px radius; work
+laid out in rows with a severity stripe that makes what needs attention findable before any
+text is read. Jost for headings, Inter for the interface.
 
 <p align="center">
-  <img src="assets/palette.png" width="720" alt="Paleta: Ink, Slate, Stone, Sakura, Blossom, Petal, Wood, Leaf">
+  <img src="assets/palette.png" width="720" alt="Palette: Ink, Slate, Stone, Sakura, Blossom, Petal, Wood, Leaf">
 </p>
 
 ---
 
-<p align="center"><sub>O código é privado. Para conhecer o produto ou ver uma demonstração, fale com a equipe.</sub></p>
+<p align="center"><sub>The code is private. To learn more or see a demo, get in touch with the team.</sub></p>
