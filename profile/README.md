@@ -1,9 +1,6 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/kira-lockup-dark.png">
-    <img src="assets/kira-lockup.png" width="720" alt="Kira — AI that learns how your team works">
-  </picture>
-</p>
+<h1 align="center">Kira <sub>キラ</sub></h1>
+
+<p align="center"><strong>AI that learns how your team works.</strong></p>
 
 <p align="center"><em>Intelligence that understands. Context that transforms.</em></p>
 
